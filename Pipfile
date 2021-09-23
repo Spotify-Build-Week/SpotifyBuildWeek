@@ -4,9 +4,24 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+spotipy = "*"
+requests = "*"
+datetime = "*"
+nodejs = "*"
+flask = "*"
+scipy = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
+joblib = "*"
+sklearn = "*"
+numpy = "*"
 pandas = "*"
+matplotlib = "*"
+spacy = "*"
+category-encoders = "==2.*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
