@@ -70,7 +70,6 @@ def create_app():
         return render_template(
             'predict.html', title = 'home', top_hits = [])
 
-
     return app
 
 # if __name__ == "__main__":
