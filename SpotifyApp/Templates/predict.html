@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Spotify Song Suggester: Predict Similar Songs on Spotify</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" /> 
+		<!--<link rel="stylesheet" href="main.css" />-->
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section class="intro">
+						<header>
+							<h1>Spotify Song Suggester</h1>
+							<p>Help users find and visualize songs that fit their personal taste.</p>
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
+						</header>
+
+						<div class="content">
+							<p><strong></strong> <p> Most Common Genre on Spotify at a Glance.</p>
+							<span class="image main"><img src="static/assets/images/genre.png"alt="trends" /></span>
+						</div>
+
+					</section>
+					
+					<!-- Section -->
+					<section>
+						<header>
+							<h2>Song Recommender</h2>
+						</header>
+						<div class="content">
+							<p>
+								<strong>Enter a song</strong>
+								 to find out similar songs...
+							</p>
+							<form action="/" method="post">
+								<div class="fields">
+									<div class="field half">
+										<input 
+											type="text" 
+											name="artist_name" 
+											id="artist_name" 
+											placeholder="Artist Name" 
+										/>
+									</div>
+									<div class="field half">
+										<input type="text" name="song_name" id="song_name" placeholder="Song Name" />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Submit" class="button primary"></input></li>
+								</ul>
+							</form>
+							<div>
+								{{top_hits}}
+							</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Parameters Used in Model</h2>
+						</header>
+						<div class="content">
+							<p><strong>What are the parameters used to determine a song's audio features?</strong> </p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-laptop">acousticness</li>
+								<li class="icon solid fa-bolt">danceability</li>
+								<li class="icon solid fa-signal">duration_ms</li>
+								<li class="icon solid fa-cog">energy</li>
+								<li class="icon solid fa-map-marker-alt">instrumentalness</li>
+								<li class="icon solid fa-code">liveness</li>
+								<li class="icon solid fa-laptop">loudness</li>
+								<li class="icon solid fa-bolt">speechiness</li>
+								<li class="icon solid fa-signal">tempo</li>
+								<li class="icon solid fa-cog">valence</li>
+								<li class="icon solid fa-map-marker-alt">genre</li>
+								<li class="icon solid fa-code">key</li>
+								<li class="icon solid fa-laptop">mode</li>
+								<li class="icon solid fa-bolt">time_signature</li>
+							</ul>
+							<p>With these factors we are able to find the songs closest to your input.</p>
+						</div>
+					</section>
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Scatter Plot of Audio Feature Distribution and Dependability</h2>
+					</header>
+
+					<div class="content">
+						<!-- <p><strong>You May Like</strong> <p> This song variable:</p></p> -->
+						<span class="image main"><img src="static/assets/images/scatter.png"alt="trends" /></span>
+					</div>
+				</section>
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Audio Feature Correlation with Each Other</h2>
+					</header>
+
+					<div class="content">
+						<!-- <p><strong>You May Like</strong> <p> This song variable:</p></p> -->
+						<span class="image main"><img src="static/assets/images/heatmap.png"alt="trends" /></span>
+					</div>
+				</section>
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Audio Feature Correlation with Each Other 2.0</h2>
+					</header>
+
+					<div class="content">
+						<span class="image main"><img src="static/assets/images/heatmap2.png"alt="" /></span>
+					</div>
+				</section>	
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Correlation of Popularity and Danceability (Positive Trend)</h2>
+					</header>
+
+					<div class="content">
+						<!-- <p><strong>You May Like</strong> <p> This song variable:</p></p> -->
+						<span class="image main"><img src="static/assets/images/dance.png"alt="trends" /></span>
+					</div>
+				</section>
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Correlation of Popularity and Loudness (Positive Trend)</h2>
+					</header>
+
+					<div class="content">
+						<span class="image main"><img src="static/assets/images/loud.png"alt="" /></span>
+					</div>
+				</section>	
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Audio Feature Trends Compare to Popularity</h2>
+					</header>
+
+					<div class="content">
+						<!-- <p><strong>You May Like</strong> <p> This song variable:</p></p> -->
+						<span class="image main"><img src="static/assets/images/trend.png"alt="trends" /></span>
+					</div>
+				</section>
+
+				<!-- Section -->
+				<section id="first">
+					<header>
+						<h2>Audio Features of the Song: 7 Rings</h2>
+					</header>
+
+					<div class="content">
+						<span class="image main"><img src="static/assets/images/radarchart.png"alt="" /></span>
+					</div>	
+				</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Authors</h2>
+						</header>
+						<div class="content">
+							<p><strong>Check out our</strong> <a href="https://github.com/Spotify-Build-Week/SpotifyBuildWeek" target="_blank">GitHub Repo</a> for the source code.</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-laptop"><a href="https://www.linkedin.com/in/madina-izimbetova-52562956" target="_blank">Madina Izimbetova</a></li>
+								<!--<a href="https://github.com/madina-iz" target="_blank">Madina (GitHub)</a> -->
+								<li class="icon solid fa-laptop"><a href="https://www.linkedin.com/in/josiah-coates/" target="_blank">Josiah Coates</a></li>
+								<li class="icon solid fa-laptop"><a href="https://www.linkedin.com/in/jacksonreber/" target="_blank">Jackson Reber</a></li>
+								<li class="icon solid fa-laptop"><a href="https://github.com/jessyio" target="_blank">Jessy Huang</a></li>
+							</ul>
+							<p>Hope you had fun using this app!</p>
+						</div>
+					</section>
+					
+					
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+	</body>
+</html>
