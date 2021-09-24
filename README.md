@@ -7,9 +7,6 @@ Link to heroku app: https://frozen-river-47321.herokuapp.com/
 ## Situation
 We are data scientists tasked with helping users find and visualize songs that fit their personal taste.
 
-## Target Audience
-Anyone who would like to find songs based .
-
 ## Objective
 1. Build a model to recommend songs based on similarity to user input;
 2. Create visualizations using song data to highlight similarities and differences between recommendations.
